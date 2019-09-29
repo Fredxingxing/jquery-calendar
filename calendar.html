@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-calendar</title>
+    <link  rel="stylesheet" href="calendar.css">
+</head>
+<body>
+<div class="calendar">
+    <div class="calendar-main">
+        <div class="calendar-header">
+            <!--<div>-->
+            <!--<select>-->
+            <!--<option>2017</option>-->
+            <!--<option>2018</option>-->
+            <!--<option>2019</option>-->
+            <!--<option>2020</option>-->
+            <!--</select>-->
+            <!--</div>-->
+            <!--<div style="display: flex">-->
+            <!--<div id="lastIcon" style="margin-right: 10px;font-size: 20px"><</div>-->
+            <!--<select>-->
+            <!--<option>1月</option>-->
+            <!--<option>2月</option>-->
+            <!--<option>3月</option>-->
+            <!--<option>4月</option>-->
+            <!--</select>-->
+            <!--<div id="nextIcon" style="margin-left: 10px;font-size: 20px">></div>-->
+            <!--</div>-->
+            <div style="display: flex">
+                <div id="lastIcon" style="margin-right: 20px;font-size: 24px;cursor: pointer"><</div>
+                <button id="backToday" type="button" class="btn btn-danger">返回今天</button>
+                <div id="nextIcon" style="margin-left: 20px;font-size: 24px;cursor: pointer">></div>
+            </div>
+        </div>
+        <div class="calendar-body">
+            <div class="calendar-body-header">
+                <div>日</div>
+                <div>一</div>
+                <div>二</div>
+                <div>三</div>
+                <div>四</div>
+                <div>五</div>
+                <div>六</div>
+            </div>
+            <div class="calendar-content" id="calendar-content">
+
+            </div>
+        </div>
+    </div>
+    <div class="calendar-sidebar">
+        <div class="calendar-sidebar-date" id="side-date">2019-09-21</div>
+        <div class="calendar-sidebar-week" id="side-week">星期六</div>
+        <div class="calendar-sidebar-day" id="side-day">21</div>
+    </div>
+</div>
+<script src="modules/jquery-3.4.1.min.js"></script>
+<script src="calendar.js"></script>
+</body>
+</html>
