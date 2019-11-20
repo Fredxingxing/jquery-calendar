@@ -3,15 +3,22 @@ var pagination = (function () {
   var page = 1;
   var defualt = {
     total_pages:3,
-    id:'#pagination'
+    id:'#pagination',
+    color:'',
+    nextPageClick:function() {
+
+    },
+    lastPageClick:function( ) {
+    }
   }
   //页脚
-  function render (pagination) {
-    // var $paginationDom = $('#pagination')
+  function render (option) {
+    defualt = $.extend(defualt,option)
+    $paginationDom = $(defualt.id)
     $paginationDom.html('')
     var $lastDom = '<li class="page-item" id="lastPage"><span class="page-link" >上一页</span></li>'
     var $nextDom = '<li class="page-item" id="nextPage"><span class="page-link" >下一页</span></li>'
-    if (!pagination || pagination.total_pages == 1) {
+    if (!defualt || defualt.total_pages == 1) {
       $lastDom = ''
       $nextDom = ''
     }
@@ -20,10 +27,10 @@ var pagination = (function () {
       lastPageClick()
     })
     // 要判断剩余页少于6的时候
-    var page_max = page + 5 > pagination.total_pages ? pagination.total_pages : page + 5
+    var page_max = page + 5 > defualt.total_pages ? defualt.total_pages : page + 5
     var page_min = 0;
-    if(pagination.total_pages>6){
-      page_min = page - 1 < pagination.total_pages - 6 ? page - 1 : pagination.total_pages - 6
+    if(defualt.total_pages>6){
+      page_min = page - 1 < defualt.total_pages - 6 ? page - 1 : defualt.total_pages - 6
     }
     for (var index = page_min; index < page_max; index++) {
       var activeClass = page === (index + 1) ? 'page-active' : ''
@@ -35,13 +42,13 @@ var pagination = (function () {
         })
       })(index)
     }
-    if (pagination.total_pages > 6 && (pagination.total_pages - page) > 5) {
+    if (defualt.total_pages > 6 && (defualt.total_pages - page) > 5) {
       var $moreDom = '<li class="page-item"><span class="page-link" >...</span></li>'
       $paginationDom.append($moreDom)
     }
     $paginationDom.append($nextDom)
     $('#nextPage').click(function () {
-      nextPageClick(pagination.total_pages)
+      nextPageClick(defualt.total_pages)
     })
   }
 
