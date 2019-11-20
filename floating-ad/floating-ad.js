@@ -74,6 +74,6 @@ var float = (function () {
     });
   }
   return{
-    render // 参数 render
+    render:render // 参数 render
   }
 })()

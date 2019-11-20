@@ -7,3 +7,4 @@
 
 2.floating advertising window
 
+3.pagination
