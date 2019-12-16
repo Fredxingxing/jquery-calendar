@@ -3,17 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../modules/bootstrap.min.css">
 </head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination li {
+        margin-left: 12px;
+        cursor: pointer;
+    }
+
+    .page-link {
+        color: #000;
+    }
+
+    .page-link:hover {
+        color: #FF4650;;
+    }
+
+    .page-active {
+        color: #fff;
+        background: #E20110 !important;
+    }
+
+</style>
 <body>
-<div style="width: 100vw;height: 100vh;background: #aaa">
-  <div id="pagination"></div>
+<div style="width: 100vw;height: 100vh;background: #ccc">
+    <div class="pagination">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" id="pagination">
+            </ul>
+        </nav>
+    </div>
+    <div class="pagination">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" id="p2">
+            </ul>
+        </nav>
+    </div>
 </div>
+<script src="../modules/bootstrap.min.js"></script>
 <script src="../modules/jquery-3.4.1.min.js"></script>
 <script src="pagination.js"></script>
 <script>
-  pagination.render({
-
-  })
+  var page2 = new Pagination({id: 'p2',total_pages:5})
+  page2.render()
+  console.log('page2',page2)
+  var page = new Pagination()
+  page.render()
+  console.log('page',page)
 </script>
 </body>
 </html>
